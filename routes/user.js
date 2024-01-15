@@ -62,7 +62,8 @@ router.get('/login', (req, res)=>{
 });
 
 router.get('/dashboard', checkAuthenticated, (req, res)=>{
-    const name = req.session.name; // Retrieve user's name from session
+    // const name = req.session.name; // Retrieve user's name from session
+    const name = req.body.name; // Retrieve user's name from session
     res.render('dashboard', { name: name });
 });
 

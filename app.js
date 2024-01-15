@@ -12,7 +12,7 @@ const flash = require('express-flash');
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URL)
+mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{
   console.log('connected to the database successfully')
 })
@@ -41,12 +41,12 @@ app.set('view engine', 'ejs');
 
 const userRoute = require('./routes/user');
 const orderRoute = require('./routes/order');
-const adminRoute = require('./routes/admin');
+// const adminRoute = require('./routes/admin');
 
 // ROUTE
 app.use('/user', userRoute);
 app.use('/order', orderRoute);
-app.use('/admin', adminRoute);
+// app.use('/admin', adminRoute);
 
 
 app.get('/', (req, res)=>{
