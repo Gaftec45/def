@@ -4,8 +4,8 @@ const passport = require('passport');
 const User = require('../models/users');
 
 // ROUTE
-router.get('/Signup', (req, res)=>{
-    res.render('SignUp')
+router.get('/signup', (req, res)=>{
+    res.render('signup')
 });
 
 router.post('/login', checkNotAuthenticated, (req, res, next) => {
