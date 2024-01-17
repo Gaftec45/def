@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
+// const passport = require('passport');
 const User = require('../models/users');
 
 // ROUTE
 router.get('/signup', (req, res)=>{
     res.render('signup')
 });
-
+/*
 router.post('/login', checkNotAuthenticated, (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         // Handle authentication errors
@@ -26,7 +26,7 @@ router.post('/login', checkNotAuthenticated, (req, res, next) => {
                 failureFlash: true
             })(req, res, next);
         })(req, res, next);
-});
+}); 
 
 router.post('/signup', checkNotAuthenticated, async (req, res)=> {
     try {
@@ -53,7 +53,7 @@ router.post('/signup', checkNotAuthenticated, async (req, res)=> {
         console.error(e);
         res.redirect('/user/signup');
     }
-});
+});*/
 
 router.get('/login', (req, res)=>{
     const errorMessage = req.flash('error');
@@ -61,6 +61,11 @@ router.get('/login', (req, res)=>{
     res.render('login', { errorMessage });
 });
 
+router.get('/dashboard', (req, res)=>{
+    res.render('dashboard')
+})
+
+/*
 router.get('/dashboard', checkAuthenticated, (req, res)=>{
     // const name = req.session.name; // Retrieve user's name from session
     const name = req.body.name; // Retrieve user's name from session
@@ -79,7 +84,7 @@ router.get('/dashboard', checkAuthenticated, async (req, res) => {
         console.error('Error handling dashboard route:', error);
         res.status(500).send('Internal Server Error');
     }
-});
+}); */
 
 // add Logout Route
 
@@ -93,7 +98,7 @@ router.get('/logout', (req, res) => {
     });
 });
 
-// END ROUTE
+/*/ END ROUTE
 
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
@@ -107,6 +112,6 @@ function checkNotAuthenticated(req, res, next) {
         return res.redirect('/user/dashboard');
     }
     next();
-}
+}*/
 
 module.exports = router;

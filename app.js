@@ -5,8 +5,8 @@ if (process.env.NODE_ENV !== 'production'){
 const express = require('express');
 const app = express();
 const PORT = 2000;
-const passport = require('passport');
-const initializePassport = require('./passport-config');
+// const passport = require('passport');
+// const initializePassport = require('./passport-config');
 const session = require('express-session');
 const flash = require('express-flash');
 const bcrypt = require('bcryptjs');
@@ -19,11 +19,11 @@ mongoose.connect(process.env.MONGODB_URI)
 .catch((err)=> {
   console.error('error connecting to the database', err)
 })
-
+/*
 initializePassport(passport,
   id => users.find(user => user.id === id),
   email => users.find(user => user.email === email)
-)
+) */
 
 // midleware
 app.use(express.urlencoded({ extended: true }));
@@ -33,8 +33,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }))
+/*
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session());*/
 app.use(express.static('public'));
 
 app.set('view engine', 'ejs');

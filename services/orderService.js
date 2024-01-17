@@ -1,4 +1,4 @@
-// services/orderService.js
+/* / services/orderService.js
 const Order = require('../models/orders');
 
 // Fetch orders for a specific user from the database
@@ -11,5 +11,5 @@ async function fetchUserOrders(userId) {
         throw error;
     }
 }
-
-module.exports = { fetchUserOrders };
+ 
+module.exports = { fetchUserOrders }; */

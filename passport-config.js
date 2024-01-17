@@ -1,4 +1,4 @@
-const LocalStrategy = require('passport-local').Strategy;
+/*const LocalStrategy = require('passport-local').Strategy;
 const User = require('./models/users'); // Adjust the path accordingly
 
 function initialize(passport) {
@@ -33,4 +33,4 @@ function initialize(passport) {
     
 }
 
-module.exports = initialize;
+module.exports = initialize; */
